@@ -1,0 +1,21 @@
+public class Main {
+    public static void main(String[] args) {
+        Calculator calc = Calculator.instance.get();
+
+        // Используем double, чтобы сохранить точность
+        double a = calc.plus.apply(1.0, 2.0);    // 3.0
+        double b = calc.minus.apply(1.0, 1.0);   // 0.0
+
+        // Проверяем перед делением
+        if (b != 0) {
+            double c = calc.divide.apply(a, b);
+            System.out.println("Результат деления: " + c);
+        } else {
+            System.out.println("Ошибка: деление на ноль!");
+            System.out.println("a = " + a + ", b = " + b);
+        }
+
+        // Выводим информацию о калькуляторе
+        System.out.println("Калькулятор: " + calc);
+    }
+}
